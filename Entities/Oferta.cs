@@ -10,6 +10,6 @@
         public int EmpresaId { get; set; }
         // Propiedad de navegación (relación con Empresa)
         public Empresa? Empresa { get; set; }
-        public IList<Habilidad> OfertaHabilidades { get; set; }
+        public IList<OfertaHabilidad> OfertaHabilidades { get; set; }
     }
 }
