@@ -4,6 +4,12 @@ namespace Proyecto_Final_PrograIV.Entities
 {
     public class OfertaHabilidad
     {
-        public int OfertaHabilidadId { get; set; }
+        
+        public int OfertaId { get; set; }
+        public Oferta Oferta {get; set;}
+        
+        public int HabilidadId {get; set;}
+        public Habilidad habilidad {get;set;}
+
     }
 }
