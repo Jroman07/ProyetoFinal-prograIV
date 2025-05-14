@@ -9,6 +9,7 @@
         // Clave Foránea
         public int EmpresaId { get; set; }
         // Propiedad de navegación (relación con Empresa)
-        public Empresa? Empresa { get; set; } 
+        public Empresa? Empresa { get; set; }
+        public IList<Habilidad> OfertaHabilidades { get; set; }
     }
 }
