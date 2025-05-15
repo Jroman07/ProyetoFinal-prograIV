@@ -11,5 +11,7 @@ namespace Proyecto_Final_PrograIV.Entities
         public string SecondSurname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public IList<CandidateOffer> CandidateOffers { get; set; }
     }
 }

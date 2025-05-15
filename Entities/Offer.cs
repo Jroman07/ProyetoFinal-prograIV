@@ -11,5 +11,6 @@
         // Propiedad de navegación (relación con Empresa)
         public Company? Company { get; set; }
         public IList<OfferSkill> OfferSkills { get; set; }
+        public IList<CandidateOffer> CandidateOffers { get; set; }
     }
 }
