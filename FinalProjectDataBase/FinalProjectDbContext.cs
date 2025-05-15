@@ -10,7 +10,10 @@ namespace Proyecto_Final_PrograIV.FinalProjectDataBase
             optionsBuilder.UseInMemoryDatabase(databaseName: "JWTDataBase");
         }
 
-        public DbSet<Candidato> Candidates { get; set; }
-
+        public DbSet<Candidate> Candidates { get; set; }
+        //public DbSet<Company> Companies { get; set; }
+        //public DbSet<Offer> Offers { get; set; }
+        //public DbSet<Skill> Skills { get; set; }
+        //public DbSet<OfferSkill> OfferSkills { get; set; }
     }
 }
