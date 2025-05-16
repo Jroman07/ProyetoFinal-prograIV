@@ -36,7 +36,7 @@ namespace Proyecto_Final_PrograIV.Controllers
         [HttpGet("search")]
         public IEnumerable<Offer> Get([FromQuery] string? name)
         {
-            return (IEnumerable<Offer>)_OfferService.GetOfferByName(name);
+            return _OfferService.GetOffersByName(name);
         }
     }
 }

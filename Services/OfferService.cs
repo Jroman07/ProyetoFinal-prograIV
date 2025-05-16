@@ -54,27 +54,41 @@ namespace Proyecto_Final_PrograIV.Services
             }
         }
 
-        public Offer GetOfferByName(string? Name)
+        public List<Offer> GetOfferByName(string? Name)
         {
-            Offer? findOfferByName = _dbContext.Offers.Find(Name);
+            throw new NotImplementedException();
+        }
 
-            if (findOfferByName!= null){
-                return findOfferByName;
-            }else{
-                throw new Exception("Offer not found");
+        public List<Offer> GetOffersByName(string? name)
+        {
+            {
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    return _dbContext.Offers.ToList();
+                }
+
+                return _dbContext.Offers
+                .Where(o => o.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
             }
+        }
 
-        } // mostrar oferta por el nombre
 
         public Offer UpdateOffer(int Id, Offer offer)
         {
             Offer? UpdateOffer = _dbContext.Offers.Find(Id);
 
-            if (UpdateOffer != null){
-                _dbContext.Offers.Update(UpdateOffer);
+            if (UpdateOffer != null)
+            {
 
+                UpdateOffer.Name = offer.Name;
+                UpdateOffer.Description = offer.Description;
+                _dbContext.SaveChanges();
                 return UpdateOffer;
-            }else{
+                
+            }
+            else
+            {
                 throw new Exception("Offer not found");
             }
         

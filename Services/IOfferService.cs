@@ -19,7 +19,7 @@ namespace Proyecto_Final_PrograIV.Services
 
         public void DeleteOffer(int Id);
 
-        public Offer GetOfferByName(string? Name); 
+        public List<Offer> GetOffersByName(string? Name); 
 
         
 
