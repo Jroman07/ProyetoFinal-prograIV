@@ -22,7 +22,7 @@ namespace Proyecto_Final_PrograIV.Controllers
         }
         // GET: api/<CandidatesController>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IEnumerable<Candidate> Get()
         {
             return _candidateService.GetAllCandidates();
@@ -35,21 +35,28 @@ namespace Proyecto_Final_PrograIV.Controllers
             return _candidateService.GetCandidateById(id);
         }
 
+        [HttpGet("search")]
+        public IEnumerable<Candidate> Get([FromQuery] string? name)
+        {
+            return _candidateService.GetCandidatesByName(name);
+        }
+
         // POST api/<CandidatesController>
         [HttpPost]
-        public string Post([FromBody] Candidate candidate)
+        public Candidate Post([FromBody] Candidate candidate)
         {
-            if (candidate.Email == "string")
-            {
-                //user.Role = "GUEST";
-                //generate token
-                var token = GenerateJwtToken(candidate.Email);
-                _candidateService.AddCandidate(candidate);
+            //if (candidate.Email == "string")
+            //{
+            //    //user.Role = "GUEST";
+            //    //generate token
+            //    var token = GenerateJwtToken(candidate.Email);
+            //    _candidateService.AddCandidate(candidate);
 
-                return token;
-            }
+            //    return token;
+            //}
 
-            return "";
+            //return "";
+            return _candidateService.AddCandidate(candidate);
         }
 
         private string GenerateJwtToken(string email)

@@ -13,6 +13,6 @@ namespace Proyecto_Final_PrograIV.Entities
         public string Password { get; set; }
 
         [JsonIgnore]
-        public IList<CandidateOffer> CandidateOffers { get; set; }
+        public List<CandidateOffer>? CandidateOffers { get; set; }
     }
 }

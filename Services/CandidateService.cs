@@ -1,5 +1,6 @@
 ﻿using Proyecto_Final_PrograIV.Entities;
 using Proyecto_Final_PrograIV.FinalProjectDataBase;
+using System.Xml.Linq;
 
 namespace Proyecto_Final_PrograIV.Services
 {
@@ -42,6 +43,19 @@ namespace Proyecto_Final_PrograIV.Services
         public Candidate GetCandidateById(int Id)
         {
             return _dbContext.Candidates.Find(Id);
+        }
+
+        public List<Candidate> GetCandidatesByName(string? name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return _dbContext.Candidates.ToList();
+            }
+
+            return _dbContext.Candidates
+                .Where(c => c.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
+
         }
 
         public Candidate UpdateCandidate(int Id, Candidate candidate)

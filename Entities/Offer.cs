@@ -10,7 +10,7 @@
         public int CompanyId { get; set; }
         // Propiedad de navegación (relación con Empresa)
         public Company? Company { get; set; }
-        public IList<OfferSkill> OfferSkills { get; set; }
-        public IList<CandidateOffer> CandidateOffers { get; set; }
+        public List<OfferSkill>? OfferSkills { get; set; }
+        public List<CandidateOffer>? CandidateOffers { get; set; }
     }
 }
