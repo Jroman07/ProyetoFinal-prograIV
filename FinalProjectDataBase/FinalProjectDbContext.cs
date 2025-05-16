@@ -15,6 +15,7 @@ namespace Proyecto_Final_PrograIV.FinalProjectDataBase
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<OfferSkill> OfferSkills { get; set; }
+        public DbSet<CandidateOffer> CandidateOffers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

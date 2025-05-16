@@ -12,6 +12,7 @@ namespace Proyecto_Final_PrograIV.Entities
         public string Email { get; set; }
         public string Password { get; set; }
 
+        [JsonIgnore]
         public IList<CandidateOffer> CandidateOffers { get; set; }
     }
 }
