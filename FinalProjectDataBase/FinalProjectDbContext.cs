@@ -7,7 +7,7 @@ namespace Proyecto_Final_PrograIV.FinalProjectDataBase
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "JWTDataBase");
+            optionsBuilder.UseInMemoryDatabase(databaseName: "FinalProjectDataBase");
         }
 
         public DbSet<Candidate> Candidates { get; set; }
