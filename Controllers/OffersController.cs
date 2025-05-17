@@ -38,5 +38,11 @@ namespace Proyecto_Final_PrograIV.Controllers
         {
             return _OfferService.GetOffersByName(name);
         }
+
+        [HttpPost]
+        public Offer Post([FromBody] Offer offer)
+        {
+            return _OfferService.AddOffer(offer);
+        }
     }
 }

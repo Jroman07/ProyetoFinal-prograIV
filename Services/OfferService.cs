@@ -54,21 +54,18 @@ namespace Proyecto_Final_PrograIV.Services
             }
         }
 
-        public List<Offer> GetOfferByName(string? Name)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public List<Offer> GetOffersByName(string? name)
+        public List<Offer> GetOffersByName(string? job)
         {
             {
-                if (string.IsNullOrWhiteSpace(name))
+                if (string.IsNullOrWhiteSpace(job))
                 {
                     return _dbContext.Offers.ToList();
                 }
 
                 return _dbContext.Offers
-                .Where(o => o.Name.ToLower().Contains(name.ToLower()))
+                .Where(o => o.Job.ToLower().Contains(job.ToLower()))
                 .ToList();
             }
         }
@@ -81,7 +78,7 @@ namespace Proyecto_Final_PrograIV.Services
             if (UpdateOffer != null)
             {
 
-                UpdateOffer.Name = offer.Name;
+                UpdateOffer.Job = offer.Job;
                 UpdateOffer.Description = offer.Description;
                 _dbContext.SaveChanges();
                 return UpdateOffer;
