@@ -66,11 +66,20 @@ namespace Proyecto_Final_PrograIV.Services
         {
             Company? Updatecompany = _dbcontext.Companies.Find(id);
 
-            if (company != null)
+            if (Updatecompany != null)
             {
-                Updatecompany.Name
+                Updatecompany.Name = company.Name;
+                Updatecompany.Email = company.Email;
+                Updatecompany.WebSite = company.WebSite;
+                _dbcontext.SaveChanges();
+                return Updatecompany;
+            }
+            else
+            {
+                throw new Exception("Company not found");
             }
         }
+
     }
 }
 
