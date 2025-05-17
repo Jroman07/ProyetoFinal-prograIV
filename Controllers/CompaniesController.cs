@@ -31,11 +31,27 @@ namespace Proyecto_Final_PrograIV.Controllers
         }
 
         // GET: api/Companies/search?name=value
+        // [HttpGet("search")]
+        // public IEnumerable<Company> Get([FromQuery] string? name)
+        // {
+        //     return _companyService.GetCompanyByName(name);
+        // }
+        // verficar por que da edvertencia
+                
         [HttpGet("search")]
         public IEnumerable<Company> Get([FromQuery] string? name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+
+                return new List<Company>();
+            }
+
             return _companyService.GetCompanyByName(name);
         }
+
+
+
 
         // POST: api/Companies
         [HttpPost]
