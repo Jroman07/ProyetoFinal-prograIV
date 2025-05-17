@@ -9,6 +9,8 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<FinalProjectDbContext>();
 builder.Services.AddScoped<ICandidateService, CandidateService>();
+builder.Services.AddScoped<IOfferService, OfferService>();
+builder.Services.AddScoped<ICompaniesService, CompaniesService>();
 
 builder.Services.AddCors(options =>
 {
